@@ -3,215 +3,170 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pio birthdayysss</title>
+<title>Pio Birthday</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    overflow: hidden;
-  }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
 
-  @keyframes gradientBG {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
-  }
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
 
-  .slider {
-    width: 90%;
-    max-width: 600px;
-    overflow: hidden;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.85);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    padding: 40px;
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 1;
-  }
+.slider-container {
+  width: 90%;
+  max-width: 650px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
-  .slides {
-    display: flex;
-    transition: transform 0.6s ease;
-  }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
-  .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
+.slide {
+  min-width: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
 
-  h1 {
-    text-align: center;
-    font-size: 32px;
-    color: #5a4b8a;
-    margin-bottom: 20px;
-  }
+h1 {
+  font-size: 40px;
+  color: #5a4b8a;
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-  p {
-    font-size: 17px;
-    line-height: 1.6;
-    color: #333;
-  }
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 20px;
+}
 
-  .buttons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-  }
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 30px;
+}
 
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #5a4b8a;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-  }
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #5a4b8a;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
 
-  button:hover {
-    background: #483d72;
-  }
+button:hover {
+  background: #483d72;
+}
 
-  button:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-  }
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
-  .spotify-iframe {
-    margin: 25px 0;
-  }
-
-  .confetti {
-    position: absolute;
-    padding: 5px 10px;
-    background-color: hsl(200, 100%, 70%);
-    color: #fff;
-    font-weight: bold;
-    border-radius: 5px;
-    opacity: 0.9;
-    white-space: nowrap;
-    pointer-events: none;
-    animation: fallConfetti linear infinite;
-    font-size: 14px;
-  }
-
-  @keyframes fallConfetti {
-    0% {transform: translateY(-20px) rotate(0deg);}
-    100% {transform: translateY(100vh) rotate(360deg);}
-  }
+.spotify-iframe {
+  margin: 20px 0;
+}
 </style>
 </head>
-
 <body>
-  <div class="slider">
-    <div class="slides" id="slides">
-      <!-- Slide 1 -->
-      <div class="slide">
-        <h1>Halooo Pioooo ✨</h1>
-        <p>
-          Gue cuma mau bilang, Selamat Ulang Tahun Pio!! ihh ini gue bikin semenarik mungkin biar lo suka wkwkwk 
-          gue ga jago sih bikin ginian tapi yaa ga ada salahnya sekalian nyoba.
-          Walaupun mungkin lo bisa bikin kek ginian tapii ya...
-          semoga bikinan gue ini bisa jadi salah satu hal kecill yg bisa bikin lo senengg di harii ulang tahun lo. 💛
-        </p>
-        <p>
-          Hari ini harus jadi hari yang spesial buat lo dan gue mauuu ikutt jadi salah satu orang yang ngerayain juga wkwk.
-        </p>
-      </div>
 
-      <!-- Slide 2 -->
-      <div class="slide">
-        <h1>Happyyy Birthdayyy Piookuu 💐</h1>
-        <p>
-          Semoga semua hal baik datang ke hidup lo tahun ini dan semoga lo dapat banyak kebahagiaan, ketenangan, dan cinta.
-        </p>
-
-        <!-- Spotify Embed -->
-        <div class="spotify-iframe">
-          <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/track/0rgEL2cD2T5MDzSDJTQNlw?utm_source=generator" 
-            width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-          </iframe>
-        </div>
-
-        <p>
-          Piooo jangan pernah berhenti jadi orang baikk, trus kalo misal lo disakitin cewe lagii, sini gue maju paling depan anjayy dan ini ada 1 tulisan gue buat lo
-          dan dengerinn baik baik lagu yg ada disini yaa pioo
-
-          
-           <p> Kamu berhasil membuat debar jantungku bersorak-sorak. Kamu sengaja atau kamu tak menyadari gema jantungku seakan tak karuan saat kamu tak ada?
-             Aku bukan pengamat, namun netramu seakan memikatku lekat. Teduh, aku menemukan ketulusan di dalamnya dan membuatku betah berlama-lama.
-             Aku tak suka berbicara banyak namun denganmu semua makhluk hidup atau benda di alam semesta ini mungkin bisa kujabarkan dengan rinci.
-             Aku pelupa, ingatanku tak cukup baik tetapi jika kamu bertanya, makanan apa saja yang menjadi kesukaanmu atau hal apa yang paling kamu sukai, aku mengingatnya jelas. 
-             Sepertinya pikiranku mampu mengingat lebih banyak tentangmu dibandingkan mata kuliah yang kusukai.
-             Kamu ... 
-             seseorang yang kukagumi, kurasa aku jatuh cinta–ah salah!
-             Aku jatuh hati.
-          <br><br>
-          -lotssss loveeee, lionyyyy ♡
-        </p>
-      </div>
+<div class="slider-container">
+  <div class="slides" id="slides">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <h1>Halooo Pioooo ✨</h1>
+      <p>
+        Gue cuma mau bilang, Selamat Ulang Tahun Pio!! ihh ini gue bikin semenarik mungkin biar lo suka wkwkwk 
+        gue ga jago sih bikin ginian tapi yaa ga ada salahnya sekalian nyoba.
+        Walaupun mungkin lo bisa bikin kek ginian tapii ya...
+        semoga bikinan gue ini bisa jadi salah satu hal kecill yg bisa bikin lo senengg di harii ulang tahun lo. 💛
+      </p>
+      <p>
+        Hari ini harus jadi hari yang spesial buat lo dan gue mauuu ikutt jadi salah satu orang yang ngerayain juga wkwk.
+      </p>
     </div>
 
-    <div class="buttons">
-      <button id="prev" onclick="moveSlide(-1)" disabled>Back</button>
-      <button id="next" onclick="moveSlide(1)">Next</button>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <h1>Happyyy Birthdayyy Piookuu 💐</h1>
+      <p>
+        Semoga semua hal baik datang ke hidup lo tahun ini dan semoga lo dapat banyak kebahagiaan, ketenangan, dan cinta.
+      </p>
+
+      <div class="spotify-iframe">
+        <iframe style="border-radius:12px" 
+          src="https://open.spotify.com/embed/track/0rgEL2cD2T5MDzSDJTQNlw?utm_source=generator" 
+          width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+      </div>
+
+      <p>
+        Piooo jangan pernah berhenti jadi orang baikk, trus kalo misal lo disakitin cewe lagii, sini gue maju paling depan anjayy dan ini ada 1 tulisan gue buat lo
+        dan dengerinn baik baik lagu yg ada disini yaa pioo
+      </p>
+
+      <p>
+        Kamu berhasil membuat debar jantungku bersorak-sorak. Kamu sengaja atau kamu tak menyadari gema jantungku seakan tak karuan saat kamu tak ada?
+        Aku bukan pengamat, namun netramu seakan memikatku lekat. Teduh, aku menemukan ketulusan di dalamnya dan membuatku betah berlama-lama.
+        Aku tak suka berbicara banyak namun denganmu semua makhluk hidup atau benda di alam semesta ini mungkin bisa kujabarkan dengan rinci.
+        Aku pelupa, ingatanku tak cukup baik tetapi jika kamu bertanya, makanan apa saja yang menjadi kesukaanmu atau hal apa yang paling kamu sukai, aku mengingatnya jelas. 
+        Sepertinya pikiranku mampu mengingat lebih banyak tentangmu dibandingkan mata kuliah yang kusukai.
+        Kamu ... seseorang yang kukagumi, kurasa aku jatuh cinta–ah salah! Aku jatuh hati.
+      </p>
+
+      <p>-lotssss loveeee, lionyyyy ♡</p>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <h1>Surprise Confetti! 🎉</h1>
+      <p>Selamat ulang tahun, Pio! Semoga harimu penuh warna, tawa, dan kebahagiaan!</p>
     </div>
   </div>
 
+  <div class="buttons">
+    <button id="prev" onclick="moveSlide(-1)" disabled>Back</button>
+    <button id="next" onclick="moveSlide(1)">Next</button>
+  </div>
+</div>
+
 <script>
+const slides = document.getElementById('slides');
+const totalSlides = slides.children.length;
 let currentSlide = 0;
 
-function moveSlide(direction) {
-  const slides = document.getElementById("slides");
-  const totalSlides = slides.children.length;
-  currentSlide += direction;
-
+function moveSlide(dir){
+  currentSlide += dir;
   if(currentSlide < 0) currentSlide = 0;
-  if(currentSlide > totalSlides - 1) currentSlide = totalSlides - 1;
-
+  if(currentSlide >= totalSlides) currentSlide = totalSlides-1;
   slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-  document.getElementById("prev").disabled = currentSlide === 0;
-  document.getElementById("next").disabled = currentSlide === totalSlides - 1;
-
-  if(currentSlide === totalSlides - 1){
-    startConfetti();
-  } else {
-    clearConfetti();
-  }
-}
-
-let confettiInterval;
-function startConfetti(){
-  for(let i=0;i<20;i++) createConfetti();
-  confettiInterval = setInterval(()=>createConfetti(), 400);
-}
-
-function clearConfetti(){
-  clearInterval(confettiInterval);
-  document.querySelectorAll('.confetti').forEach(c => c.remove());
-}
-
-function createConfetti(){
-  const c = document.createElement('div');
-  c.classList.add('confetti');
-  c.style.left = Math.random()*100 + 'vw';
-  c.style.animationDuration = (2+Math.random()*3)+'s';
-  c.textContent = "Selamat ulang tahunn Piokuuu! btw gue ada hadiah kicilll, check box ml yaaa";
-  document.body.appendChild(c);
-  setTimeout(()=>c.remove(),5000);
+  document.getElementById('prev').disabled = currentSlide === 0;
+  document.getElementById('next').disabled = currentSlide === totalSlides-1;
 }
 </script>
+
 </body>
 </html>
