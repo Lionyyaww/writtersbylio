@@ -3,125 +3,100 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pio birthdayysss</title>
+<title>Pio Birthday</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    overflow: hidden;
-  }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
 
-  @keyframes gradientBG {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
-  }
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
 
-  .slider {
-    width: 90%;
-    max-width: 650px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    padding: 40px 30px;
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    overflow: hidden;
-  }
+.slider-container {
+  width: 90%;
+  max-width: 650px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    overflow-y: auto;
-    padding-right: 10px;
-  }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
-  .slide.active {
-    opacity: 1;
-    position: relative;
-  }
+.slide {
+  min-width: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
 
-  h1 {
-    font-size: 40px;
-    color: #5a4b8a;
-    margin-bottom: 25px;
-  }
+h1 {
+  font-size: 40px;
+  color: #5a4b8a;
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-  p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: justify;
-  }
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 20px;
+}
 
-  .buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 10;
-  }
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 30px;
+}
 
-  button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 10px;
-    background: #5a4b8a;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-  }
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #5a4b8a;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
 
-  button:hover {
-    background: #483d72;
-  }
+button:hover {
+  background: #483d72;
+}
 
-  button:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-  }
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
-  .spotify-iframe {
-    margin: 20px 0;
-  }
-
-  /* Konfeti animation */
-  .confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: red;
-    top: -10px;
-    animation: fall 3s linear infinite;
-  }
-
-  @keyframes fall {
-    0% { transform: translateY(0) rotate(0deg);}
-    100% { transform: translateY(800px) rotate(360deg);}
-  }
+.spotify-iframe {
+  margin: 20px 0;
+}
 </style>
 </head>
-
 <body>
-  <div class="slider">
+
+<div class="slider-container">
+  <div class="slides" id="slides">
     <!-- Slide 1 -->
-    <div class="slide active">
+    <div class="slide">
       <h1>Halooo Pioooo ✨</h1>
       <p>
         Gue cuma mau bilang, Selamat Ulang Tahun Pio!! ihh ini gue bikin semenarik mungkin biar lo suka wkwkwk 
@@ -169,52 +144,29 @@
     <div class="slide">
       <h1>Surprise Confetti! 🎉</h1>
       <p>Selamat ulang tahun, Pio! Semoga harimu penuh warna, tawa, dan kebahagiaan!</p>
-      <!-- Konfeti -->
-      <div id="confetti-container"></div>
-    </div>
-
-    <div class="buttons">
-      <button id="prev" onclick="moveSlide(-1)" disabled>Back</button>
-      <button id="next" onclick="moveSlide(1)">Next</button>
     </div>
   </div>
 
+  <div class="buttons">
+    <button id="prev" onclick="moveSlide(-1)" disabled>Back</button>
+    <button id="next" onclick="moveSlide(1)">Next</button>
+  </div>
+</div>
+
 <script>
+const slides = document.getElementById('slides');
+const totalSlides = slides.children.length;
 let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
 
-function updateSlides() {
-  slides.forEach((slide, index) => {
-    slide.classList.toggle("active", index === currentSlide);
-  });
-  prevBtn.disabled = currentSlide === 0;
-  nextBtn.disabled = currentSlide === slides.length - 1;
-
-  // generate confetti on slide 3
-  const container = document.getElementById("confetti-container");
-  container.innerHTML = "";
-  if(currentSlide === 2){
-    for(let i=0;i<100;i++){
-      const confetti = document.createElement("div");
-      confetti.classList.add("confetti");
-      confetti.style.left = Math.random()*100 + "%";
-      confetti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
-      confetti.style.animationDuration = 2+Math.random()*3+"s";
-      container.appendChild(confetti);
-    }
-  }
+function moveSlide(dir){
+  currentSlide += dir;
+  if(currentSlide < 0) currentSlide = 0;
+  if(currentSlide >= totalSlides) currentSlide = totalSlides-1;
+  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.getElementById('prev').disabled = currentSlide === 0;
+  document.getElementById('next').disabled = currentSlide === totalSlides-1;
 }
-
-function moveSlide(direction) {
-  currentSlide += direction;
-  if (currentSlide < 0) currentSlide = 0;
-  if (currentSlide > slides.length - 1) currentSlide = slides.length - 1;
-  updateSlides();
-}
-
-updateSlides();
 </script>
+
 </body>
 </html>
